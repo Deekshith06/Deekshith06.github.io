@@ -29,6 +29,7 @@ def main() -> None:
         JS,
         ROOT / "assets" / "deekshith-ascii.webp",
         ROOT / "assets" / "deekshith-ascii.png",
+        ROOT / "assets" / "deekshith-ascii.gif",
         ROOT / ".nojekyll",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]

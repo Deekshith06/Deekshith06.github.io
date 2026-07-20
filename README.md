@@ -31,3 +31,8 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000/`.
+
+
+## Portrait animation
+
+The portrait uses an animated WebP with an animated GIF fallback. Visitors who prefer reduced motion receive the clear static PNG.
