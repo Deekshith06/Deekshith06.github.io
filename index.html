@@ -3,185 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Deekshith Seelaboyina — full-stack developer, AI/ML builder, and B.Tech CSE student at Lovely Professional University.">
-  <meta name="theme-color" content="#070a0f">
-  <meta property="og:title" content="Deekshith Seelaboyina | Full-Stack & AI/ML Developer">
-  <meta property="og:description" content="A one-screen developer portfolio featuring projects, skills, and education.">
+  <meta name="description" content="Deekshith Seelaboyina — AI/ML engineer and full-stack developer building fully working websites and intelligent applications.">
+  <meta name="theme-color" content="#050914">
+  <meta property="og:title" content="Deekshith Seelaboyina | AI/ML Engineer & Full-Stack Developer">
+  <meta property="og:description" content="I use AI to build fully working, production-focused websites and intelligent applications.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://deekshith06.github.io/">
-  <meta property="og:image" content="https://deekshith06.github.io/assets/deekshith-ascii.png">
-  <title>Deekshith Seelaboyina | Full-Stack & AI/ML Developer</title>
+  <meta property="og:image" content="https://deekshith06.github.io/assets/deekshith-ascii-clear.png">
+  <title>Deekshith Seelaboyina | AI/ML Engineer & Full-Stack Developer</title>
   <link rel="canonical" href="https://deekshith06.github.io/">
-  <link rel="preload" href="./assets/deekshith-ascii.webp" as="image" type="image/webp">
+  <link rel="preload" href="./assets/deekshith-ascii-once.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/styles.css">
   <script src="./assets/app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#portfolio-content">Skip to portfolio content</a>
+  <a class="skip-link" href="#profile-panel">Skip to profile information</a>
 
-  <main class="portfolio" aria-label="Deekshith's portfolio">
-    <header class="topbar">
-      <a class="brand" href="./" aria-label="Deekshith portfolio home">
-        <span class="brand-mark" aria-hidden="true">&gt;_</span>
-        <span>deekshith.dev</span>
-      </a>
-      <div class="topbar-status" aria-label="Availability">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Open to opportunities</span>
+  <main class="site-shell" aria-label="Deekshith Seelaboyina portfolio">
+    <header class="system-bar">
+      <div class="welcome-line" aria-label="Portfolio terminal welcome">
+        <strong>deekshith06<span>@github:~</span></strong>
+        <span class="prompt" aria-hidden="true">&gt;</span>
+        <span data-type="welcome to my portfolio">welcome to my portfolio</span>
       </div>
-      <a class="topbar-link" href="https://github.com/Deekshith06" target="_blank" rel="noreferrer">
-        GitHub
-        <span aria-hidden="true">↗</span>
-      </a>
+      <div class="system-state"><span class="online-dot" aria-hidden="true"></span> SYSTEM ONLINE <span aria-hidden="true">|</span> ONE-PAGE PORTFOLIO</div>
     </header>
 
-    <div class="portfolio-grid">
-      <aside class="identity-panel" aria-labelledby="profile-name">
-        <div class="portrait-wrap">
-          <div class="portrait-glow" aria-hidden="true"></div>
-          <picture>
-            <source media="(prefers-reduced-motion: reduce)" srcset="./assets/deekshith-ascii.png" type="image/png">
-            <source srcset="./assets/deekshith-ascii.webp" type="image/webp">
-            <img src="./assets/deekshith-ascii.gif" width="800" height="1000" alt="Animated terminal ASCII portrait of Deekshith rendering line by line" fetchpriority="high">
-          </picture>
-          <span class="portrait-label"><span aria-hidden="true">●</span> ASCII identity</span>
-        </div>
+    <nav class="mobile-switcher" aria-label="Mobile portfolio panels">
+      <button class="mobile-tab is-active" type="button" data-mobile-target="portrait">Portrait</button>
+      <button class="mobile-tab" type="button" data-mobile-target="profile">Profile</button>
+    </nav>
 
-        <div class="identity-copy">
-          <p class="eyebrow">Full-Stack · AI/ML</p>
-          <h1 id="profile-name">Deekshith<br><span>Seelaboyina</span></h1>
-          <p class="identity-summary">I build production-focused web systems, intelligent applications, and practical tools that solve real problems.</p>
-          <div class="identity-actions">
-            <a class="primary-action" href="https://github.com/Deekshith06?tab=repositories" target="_blank" rel="noreferrer">View repositories <span aria-hidden="true">↗</span></a>
-            <button class="secondary-action" type="button" data-open-panel="projects">Featured work</button>
+    <section class="panel-grid">
+      <article class="terminal-panel portrait-panel is-mobile-active" data-mobile-panel="portrait" aria-labelledby="portrait-title">
+        <header class="terminal-titlebar">
+          <div class="traffic-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h1 id="portrait-title">ascii-portrait.sh</h1>
+        </header>
+
+        <div class="portrait-body">
+          <div class="portrait-stage">
+            <img class="ascii-portrait" src="./assets/deekshith-ascii-once.svg" width="666" height="820" alt="Clear ASCII portrait of Deekshith rendering line by line once when the page opens" fetchpriority="high">
           </div>
+          <p class="terminal-result" id="portrait-result" aria-live="polite"><span aria-hidden="true">&gt;</span> portrait loaded successfully <span class="block-cursor" aria-hidden="true"></span></p>
         </div>
-      </aside>
+      </article>
 
-      <section class="workspace" id="portfolio-content">
-        <div class="workspace-heading">
-          <div>
-            <p class="workspace-kicker">Developer portfolio / 2026</p>
-            <h2>Engineering useful products from interface to intelligence.</h2>
-          </div>
-          <dl class="headline-stats" aria-label="Profile summary">
-            <div><dt>Degree</dt><dd>B.Tech CSE</dd></div>
-            <div><dt>Graduate</dt><dd>2027</dd></div>
-            <div><dt>Focus</dt><dd>Build + Ship</dd></div>
-          </dl>
-        </div>
+      <article class="terminal-panel profile-panel" id="profile-panel" data-mobile-panel="profile" aria-labelledby="profile-title">
+        <header class="terminal-titlebar">
+          <div class="traffic-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h2 id="profile-title"><strong>deekshith06<span>@github:~$</span></strong> neofetch</h2>
+        </header>
 
-        <div class="tabs" role="tablist" aria-label="Portfolio sections">
-          <button id="tab-overview" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-overview" data-tab="overview"><span>01</span> Overview</button>
-          <button id="tab-projects" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" data-tab="projects" tabindex="-1"><span>02</span> Projects</button>
-          <button id="tab-skills" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-skills" data-tab="skills" tabindex="-1"><span>03</span> Skills</button>
-          <button id="tab-education" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-education" data-tab="education" tabindex="-1"><span>04</span> Education</button>
-        </div>
+        <div class="profile-body">
+          <div class="profile-host"><strong data-type="deekshith06@github">deekshith06@github</strong><span></span></div>
 
-        <div class="panel-stage" aria-live="polite">
-          <section id="panel-overview" class="panel is-active" role="tabpanel" aria-labelledby="tab-overview" data-panel="overview">
-            <div class="overview-grid">
-              <article class="feature-card feature-card-wide">
-                <p class="card-label">About</p>
-                <h3>Software that works beyond the demo.</h3>
-                <p>I work across frontend, backend, APIs, databases, automation, and applied machine learning. My priority is clear user flow, maintainable code, reliable data, and deployable results.</p>
-              </article>
-              <article class="feature-card accent-card">
-                <p class="card-label">Current direction</p>
-                <h3>Full-stack systems enhanced by AI.</h3>
-                <p>Logistics, investment research, language technology, computer vision, and developer tooling.</p>
-              </article>
-              <article class="feature-card metric-card">
-                <p class="metric-value">04</p>
-                <div><p class="card-label">Core domains</p><p>Web · APIs · AI/ML · Automation</p></div>
-              </article>
-              <article class="feature-card metric-card">
-                <p class="metric-value">∞</p>
-                <div><p class="card-label">Mindset</p><p>Review, test, optimize, improve.</p></div>
-              </article>
-            </div>
+          <section class="terminal-section" aria-labelledby="identity-heading">
+            <h3 id="identity-heading" class="sr-only">Identity</h3>
+            <dl class="terminal-data">
+              <div><dt>Status</dt><dd data-type="AI/ML Engineer · Full-Stack Developer">AI/ML Engineer · Full-Stack Developer</dd></div>
+              <div><dt>Degree</dt><dd data-type="B.Tech, Computer Science & Engineering">B.Tech, Computer Science & Engineering</dd></div>
+              <div><dt>University</dt><dd data-type="Lovely Professional University">Lovely Professional University</dd></div>
+              <div><dt>Graduation</dt><dd data-type="Expected 2027">Expected 2027</dd></div>
+            </dl>
           </section>
 
-          <section id="panel-projects" class="panel" role="tabpanel" aria-labelledby="tab-projects" data-panel="projects" hidden>
-            <div class="project-grid">
-              <a class="project-card" href="https://github.com/Deekshith06/Relay-Market-Network" target="_blank" rel="noreferrer">
-                <span class="project-index">01</span>
-                <div><p class="card-label">Logistics platform</p><h3>Relay Market Network</h3><p>RBAC commerce, warehouse, dispatch, courier assignment, and verified delivery flow.</p></div>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="project-card" href="https://github.com/Deekshith06/FundIQ" target="_blank" rel="noreferrer">
-                <span class="project-index">02</span>
-                <div><p class="card-label">Agentic finance</p><h3>FundIQ</h3><p>Evidence-driven company research with verification agents and decision-focused reporting.</p></div>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="project-card" href="https://github.com/Deekshith06/OMNI-INDIC-Translation-Suite" target="_blank" rel="noreferrer">
-                <span class="project-index">03</span>
-                <div><p class="card-label">Language AI</p><h3>OMNI-INDIC</h3><p>Indic translation and transliteration with native, romanized, and dual-output workflows.</p></div>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="project-card" href="https://github.com/Deekshith06/SkillMap" target="_blank" rel="noreferrer">
-                <span class="project-index">04</span>
-                <div><p class="card-label">Career technology</p><h3>SkillMap</h3><p>Skill-gap analysis and actionable development paths for learners and job seekers.</p></div>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-            </div>
+          <section class="terminal-section stack-section" aria-labelledby="stack-heading">
+            <h3 id="stack-heading">— Core Stack</h3>
+            <dl class="terminal-data">
+              <div><dt>Languages</dt><dd data-type="Java, Python, C, C++">Java, Python, C, C++</dd></div>
+              <div><dt>Frontend</dt><dd data-type="React, TypeScript, HTML, CSS">React, TypeScript, HTML, CSS</dd></div>
+              <div><dt>Backend</dt><dd data-type="Spring Boot, Node.js, REST APIs">Spring Boot, Node.js, REST APIs</dd></div>
+              <div><dt>AI / ML</dt><dd data-type="Machine Learning, NLP, Computer Vision">Machine Learning, NLP, Computer Vision</dd></div>
+              <div><dt>Tools</dt><dd data-type="Git, GitHub, Docker, Vercel">Git, GitHub, Docker, Vercel</dd></div>
+            </dl>
           </section>
 
-          <section id="panel-skills" class="panel" role="tabpanel" aria-labelledby="tab-skills" data-panel="skills" hidden>
-            <div class="skills-layout">
-              <article class="skill-group">
-                <p class="skill-number">01</p><div><h3>Languages</h3><p>Java · Python · C · C++ · JavaScript · TypeScript</p></div>
-              </article>
-              <article class="skill-group">
-                <p class="skill-number">02</p><div><h3>Frontend</h3><p>React · HTML · CSS · responsive UI · accessibility</p></div>
-              </article>
-              <article class="skill-group">
-                <p class="skill-number">03</p><div><h3>Backend</h3><p>Spring Boot · Node.js · REST APIs · authentication · SQL</p></div>
-              </article>
-              <article class="skill-group">
-                <p class="skill-number">04</p><div><h3>AI / ML</h3><p>NLP · computer vision · model evaluation · intelligent agents</p></div>
-              </article>
-              <article class="skill-group">
-                <p class="skill-number">05</p><div><h3>Delivery</h3><p>Git · GitHub Actions · Docker · Vercel · Render</p></div>
-              </article>
-              <article class="skill-group">
-                <p class="skill-number">06</p><div><h3>Engineering</h3><p>Code review · debugging · optimization · tests · documentation</p></div>
-              </article>
-            </div>
+          <section class="terminal-section focus-section" aria-labelledby="focus-heading">
+            <h3 id="focus-heading">— Current Focus</h3>
+            <ul>
+              <li data-type="Production-focused intelligent web systems">Production-focused intelligent web systems</li>
+              <li data-type="Logistics, finance, language AI and automation">Logistics, finance, language AI and automation</li>
+            </ul>
           </section>
 
-          <section id="panel-education" class="panel" role="tabpanel" aria-labelledby="tab-education" data-panel="education" hidden>
-            <div class="education-layout">
-              <div class="education-main">
-                <p class="card-label">Expected graduation · 2027</p>
-                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
-                <p class="university">Lovely Professional University</p>
-              </div>
-              <div class="education-focus">
-                <p class="card-label">Current academic focus</p>
-                <ul>
-                  <li>Data structures and algorithms</li>
-                  <li>Full-stack software engineering</li>
-                  <li>Machine learning and applied AI</li>
-                  <li>Production-ready final-year projects</li>
-                </ul>
-              </div>
-            </div>
+          <section class="mission-box" aria-label="Professional direction">
+            <p><span aria-hidden="true">✦</span><strong data-type="I am an AI/ML Engineer and Full-Stack Developer.">I am an AI/ML Engineer and Full-Stack Developer.</strong></p>
+            <p><span aria-hidden="true">ϟ</span><span data-type="Using AI, I build fully working websites.">Using AI, I build fully working websites.</span></p>
           </section>
+
+          <footer class="profile-footer">
+            <div class="terminal-prompt"><strong>deekshith06<span>@github:~$</span></strong> <span class="block-cursor" aria-hidden="true"></span></div>
+            <nav aria-label="Portfolio links">
+              <a href="https://github.com/Deekshith06" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a href="https://github.com/Deekshith06?tab=repositories" target="_blank" rel="noreferrer">Projects ↗</a>
+            </nav>
+          </footer>
         </div>
-
-        <footer class="workspace-footer">
-          <p><span class="footer-prompt" aria-hidden="true">$</span> Available for internships, collaborations, and ambitious builds.</p>
-          <div>
-            <a href="https://github.com/Deekshith06" target="_blank" rel="noreferrer">github.com/Deekshith06</a>
-            <span aria-hidden="true">·</span>
-            <span>India</span>
-          </div>
-        </footer>
-      </section>
-    </div>
+      </article>
+    </section>
   </main>
 
-  <noscript><div class="noscript">JavaScript is required only for switching portfolio tabs. The Overview section remains visible.</div></noscript>
+  <noscript><p class="noscript">JavaScript is disabled. All profile information remains available, but the one-time terminal typing effect is skipped.</p></noscript>
 </body>
 </html>

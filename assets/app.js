@@ -1,50 +1,60 @@
 (() => {
   "use strict";
 
-  const tabs = [...document.querySelectorAll("[data-tab]")];
-  const panels = [...document.querySelectorAll("[data-panel]")];
-  const openers = [...document.querySelectorAll("[data-open-panel]")];
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const portraitResult = document.querySelector("#portrait-result");
+  const typedNodes = [...document.querySelectorAll("[data-type]")];
 
-  const activate = (name, { focus = false } = {}) => {
-    const targetTab = tabs.find((tab) => tab.dataset.tab === name);
-    const targetPanel = panels.find((panel) => panel.dataset.panel === name);
-    if (!targetTab || !targetPanel) return;
+  const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
-    tabs.forEach((tab) => {
-      const active = tab === targetTab;
-      tab.classList.toggle("is-active", active);
-      tab.setAttribute("aria-selected", String(active));
-      tab.tabIndex = active ? 0 : -1;
-    });
-
-    panels.forEach((panel) => {
-      const active = panel === targetPanel;
-      panel.hidden = !active;
-      panel.classList.toggle("is-active", active);
-    });
-
-    if (focus) targetTab.focus();
-    history.replaceState(null, "", `#${name}`);
+  // Reveal complete words from left to right, then continue on the next terminal line.
+  const typeText = async (node, text, speed = 22) => {
+    const tokens = text.match(/\S+\s*/g) || [text];
+    node.textContent = "";
+    for (const token of tokens) {
+      node.textContent += token;
+      await sleep(speed);
+    }
   };
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activate(tab.dataset.tab));
-    tab.addEventListener("keydown", (event) => {
-      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-      event.preventDefault();
-      let nextIndex = index;
-      if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-      if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === "Home") nextIndex = 0;
-      if (event.key === "End") nextIndex = tabs.length - 1;
-      activate(tabs[nextIndex].dataset.tab, { focus: true });
+  const runTerminalSequence = async () => {
+    if (reducedMotion) {
+      portraitResult?.classList.add("is-visible");
+      return;
+    }
+
+    const entries = typedNodes.map((node) => ({ node, text: node.dataset.type || node.textContent || "" }));
+    entries.forEach(({ node }) => { node.textContent = ""; });
+
+    await sleep(160);
+    for (const [index, entry] of entries.entries()) {
+      const speed = index === 0 ? 42 : index >= entries.length - 2 ? 28 : 20;
+      await typeText(entry.node, entry.text, speed);
+      await sleep(index === 0 ? 55 : 18);
+    }
+  };
+
+  window.addEventListener("load", () => {
+    runTerminalSequence().catch(() => {
+      typedNodes.forEach((node) => { node.textContent = node.dataset.type || ""; });
     });
-  });
 
-  openers.forEach((button) => {
-    button.addEventListener("click", () => activate(button.dataset.openPanel));
-  });
+    if (reducedMotion) {
+      portraitResult?.classList.add("is-visible");
+    } else {
+      window.setTimeout(() => portraitResult?.classList.add("is-visible"), 4800);
+    }
+  }, { once: true });
 
-  const hashPanel = window.location.hash.slice(1);
-  if (tabs.some((tab) => tab.dataset.tab === hashPanel)) activate(hashPanel);
+  const mobileTabs = [...document.querySelectorAll("[data-mobile-target]")];
+  const mobilePanels = [...document.querySelectorAll("[data-mobile-panel]")];
+
+  const activateMobilePanel = (name) => {
+    mobileTabs.forEach((tab) => tab.classList.toggle("is-active", tab.dataset.mobileTarget === name));
+    mobilePanels.forEach((panel) => panel.classList.toggle("is-mobile-active", panel.dataset.mobilePanel === name));
+  };
+
+  mobileTabs.forEach((tab) => {
+    tab.addEventListener("click", () => activateMobilePanel(tab.dataset.mobileTarget));
+  });
 })();

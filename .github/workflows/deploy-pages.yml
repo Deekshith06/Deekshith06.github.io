@@ -29,6 +29,9 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Regenerate one-time portrait reveal
+        run: python3 scripts/make_portrait_svg.py
+
       - name: Validate one-screen portfolio
         run: python3 scripts/validate_site.py
 
